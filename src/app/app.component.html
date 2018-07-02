@@ -1,7 +1,16 @@
-<h1>Bienvenue {{ title }}</h1>
-<p> {{ presentation }}
+<h1>Bienvenue dans {{ title }}</h1>
+<p>{{ presentation }}
   <img src="/assets/img/hamac.jpg" alt="Un hamac">
 </p>
+<p>Pour en savoir plus : <a [href]="url">Écosia</a></p>
+
+<p 
+  [attr.contenteditable]="isEditable"
+  [class.teal-text]="!isEditable" [class.teal]="isEditable"
+  [style.text-align]="isEditable ? 'left' : 'right'"
+>Ce paragraphe est peut-être modifiable ? Cliquez pour savoir</p>
+
+<button (click)="changeIsEditable()" class="waves-effect waves-light btn">Changement du style</button>
 
 
 <app-product-list></app-product-list>
