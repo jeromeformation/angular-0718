@@ -13,5 +13,39 @@
 <button (click)="changeIsEditable()" class="waves-effect waves-light btn">Changement du style</button>
 
 
+<!-- Mise en place d'un switch -->
+<p>Bilan météo : 
+<ng-container [ngSwitch]="meteo">
+  <ng-container *ngSwitchCase="'ensoleillé'">Il fait beau !</ng-container>
+  <ng-container *ngSwitchCase="'nuageux'">L'orage approche ! </ng-container>
+  <ng-container *ngSwitchCase="'pluvieux'">Ca mouille...</ng-container>
+  <ng-container *ngSwitchCase="'sec'">Il faut boire de l'eau</ng-container>
+  <ng-container *ngSwitchDefault>bilan indéterminé</ng-container>
+</ng-container>
+</p>
+
+<p>Ma variable météo : {{ meteo }}</p>
+
+<!-- Test des pipe avec la DecimalPipe -->
+
+<p>Nombre à virgule : {{ 66666.66666 | number:'1.0-3' }} </p>
+
+
+
+
+<!-- 
+  On affiche le formulaire seulement si ...
+  ... le booléan isEditable est à "true"
+-->
+<div *ngIf="isEditable; else elseBlock">
+  <app-product-update></app-product-update>
+</div>
+<!-- 
+  Si le "*ngIf" n'est pas respecté, on affiche ce paragraphe
+-->
+<ng-template #elseBlock>
+  <p>Le formulaire n'est pas disponible</p>
+</ng-template>
+
+<!-- Liste des produits -->
 <app-product-list></app-product-list>
-<app-product-update></app-product-update>

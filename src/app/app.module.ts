@@ -6,17 +6,28 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductUpdateComponent } from './products/product-update/product-update.component';
 
+/* Gestion de l'internationalisation */
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeFrExtra from '@angular/common/locales/extra/fr';
+import { ProductShowComponent } from './products/product-show/product-show.component';
+
+registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
+/* Fin de gestion de l'internationalisation */
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductUpdateComponent,
+    ProductShowComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

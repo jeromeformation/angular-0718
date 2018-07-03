@@ -1,1 +1,15 @@
 <h2>Liste des produits</h2>
+
+<div class="row">
+    <ul class="collection col s6">
+        <li *ngFor="let currentProduct of products" class="collection-item" >
+            <div>
+                {{ currentProduct.name }}
+                <a (click)="sendProduct(currentProduct)" class="secondary-content">
+                    <i class="material-icons">send</i>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <app-product-show [productReceived]="productToSend" class="col s6"></app-product-show>
+</div>

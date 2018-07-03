@@ -1,13 +1,12 @@
 <h2>Édition d'un produit</h2>
 
-
 <form>
   <div class="input-field">
     <input [(ngModel)]="product.name" name="name" id="name" type="text" class="validate">
     <label for="name">Nom du produit</label>
   </div>
   <div class="input-field">
-    <input [(ngModel)]="product.price" name="price" id="name" type="text" class="validate">
+    <input [(ngModel)]="product.price" name="price" id="name" type="number" class="validate">
     <label for="name">Prix</label>
   </div>
   <div class="input-field">

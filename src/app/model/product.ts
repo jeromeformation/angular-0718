@@ -8,7 +8,7 @@ export class Product {
     ) { }
 }
 
-export const PRODUCT_TEST = new Product(
+export const PRODUCT_TEST: Product = new Product(
     'Hamac',
     `Pour se détendre après 3 jours intensifs d'Angular avec 35° à l'ombre.`,
     15.99,
@@ -16,6 +16,14 @@ export const PRODUCT_TEST = new Product(
     168
 );
 
+
+export const TAB_PRODUCT: Product[] = [
+    new Product('Hamac', `Pour se détendre après 3 jours intensifs d'Angular avec 35° à l'ombre.`, 15.99, new Date(), 168),
+    new Product('Parasol', `Pour faire de l'ombre au Hamac`, 145, new Date(), 45),
+    new Product('Pot de sable', `Pour tenir le parasol`, 10, new Date(), 4558),
+    new Product('Diabolo fraise', `Pour se rafraichir`, 0.5, new Date(), 1444),
+    new Product('Verre', `Pour mettre le diabolo`, 1.99, new Date(), 141414),
+];
 
 /*
 class Product {

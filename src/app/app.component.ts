@@ -8,11 +8,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
   // encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title: string ;
-  presentation: string;
-  url: string;
-  isEditable: boolean;
-  objClassesCSS: object;
+  private title: string ;
+  private presentation: string;
+  private url: string;
+  private isEditable: boolean;
+  private objClassesCSS: object;
+  // Pour le switch
+  private meteo: string;
 
   constructor() {
     this.title = 'mon application';
@@ -21,6 +23,8 @@ export class AppComponent {
     this.isEditable = false;
     // Définition de l'objet utilisé par ngClass
     this.changeObjClassesCSS();
+    // On initialise la météo (pour le switch)
+    this.meteo = 'pluvieux';
   }
 
   /**
