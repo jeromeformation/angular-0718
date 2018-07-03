@@ -1,3 +1,11 @@
-<h3>{{ productReceived.name }}</h3>
-<p>{{ productReceived.description }}</p>
-<p>Prix: {{ productReceived.price }}€</p>
+<ng-container *ngIf="productReceived">
+    <h3>{{ productReceived.name }}</h3>
+    <p>{{ productReceived.description }}</p>
+    <p>Prix: {{ productReceived.price }}€</p>
+
+    <h5>Voter pour ce produit</h5>
+    <form>
+        <input type="range" min="0" max="5" #note />
+        <input (click)="sendNote(note.value)" type="submit" value="Voter !" class="btn">
+    </form>
+</ng-container>

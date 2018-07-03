@@ -13,9 +13,16 @@ export class ProductListComponent implements OnInit {
   // Le produit à envoyer
   private productToSend: Product;
 
+  // L'ensemble des notes
+  private notes: number[];
+  // Le moyenne calculée
+  private average: number;
+
   constructor() {
     // On initialise le tableau de produits avec nos données de test
     this.products = TAB_PRODUCT;
+    this.notes = [];
+    this.average = 0;
   }
 
   ngOnInit() {
@@ -28,6 +35,23 @@ export class ProductListComponent implements OnInit {
   private sendProduct(productClicked: Product): void {
     console.log(productClicked);
     this.productToSend = productClicked;
+  }
+
+  /**
+   * Calcule la moyenne des notes reçues
+   * @param note Note renvoyée depuis le détail
+   */
+  private calculateAverage(note: string): void {
+    const newNote: number = parseInt(note, 10);
+
+    console.log('Nouveau vote enregistré : ' + note);
+    // On ajoute la note au tableau
+    this.notes.push(newNote);
+
+    // On calcule la moyenne
+    let somme = 0;
+    this.notes.forEach(elem => somme += elem);
+    this.average = somme / this.notes.length;
   }
 
 }

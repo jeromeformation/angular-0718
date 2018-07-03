@@ -3,15 +3,15 @@
 <form>
   <div class="input-field">
     <input [(ngModel)]="product.name" name="name" id="name" type="text" class="validate">
-    <label for="name">Nom du produit</label>
+    <label class="active" for="name">Nom du produit</label>
   </div>
   <div class="input-field">
     <input [(ngModel)]="product.price" name="price" id="name" type="number" class="validate">
-    <label for="name">Prix</label>
+    <label class="active" for="name">Prix</label>
   </div>
   <div class="input-field">
     <textarea [(ngModel)]="product.description" name="description" id="description" class="materialize-textarea"></textarea>
-    <label for="description">Description</label>
+    <label class="active" for="description">Description</label>
   </div>
   <button class="waves-effect waves-light btn">Mettre à jour</button>
 
