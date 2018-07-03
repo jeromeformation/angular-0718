@@ -6,7 +6,7 @@
 
 <p 
   [attr.contenteditable]="isEditable"
-  [class.teal-text]="!isEditable" [class.teal]="isEditable"
+  [ngClass]="objClassesCSS"
   [style.text-align]="isEditable ? 'left' : 'right'"
 >Ce paragraphe est peut-être modifiable ? Cliquez pour savoir</p>
 
@@ -14,3 +14,4 @@
 
 
 <app-product-list></app-product-list>
+<app-product-update></app-product-update>
