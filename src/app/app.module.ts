@@ -14,6 +14,8 @@ import localeFrExtra from '@angular/common/locales/extra/fr';
 import { ProductShowComponent } from './products/product-show/product-show.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './root/home/home.component';
+import { ProductViewShowComponent } from './products/product-view-show/product-view-show.component';
+import { Error404Component } from './error/error404/error404.component';
 
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 /* Fin de gestion de l'internationalisation */
@@ -24,7 +26,9 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     ProductListComponent,
     ProductUpdateComponent,
     ProductShowComponent,
-    HomeComponent
+    HomeComponent,
+    ProductViewShowComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

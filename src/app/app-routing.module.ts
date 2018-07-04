@@ -6,12 +6,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { HomeComponent } from './root/home/home.component';
 import { ProductUpdateComponent } from './products/product-update/product-update.component';
+import { ProductViewShowComponent } from './products/product-view-show/product-view-show.component';
+import { Error404Component } from './error/error404/error404.component';
 
 // Paramétrage des routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'produits', component: ProductListComponent},
-  { path: 'produits/modification', component: ProductUpdateComponent }
+  { path: 'produits/modification', component: ProductUpdateComponent },
+  { path: 'produits/:id', component: ProductViewShowComponent },
+  { path: 'not-found', component: Error404Component },
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({

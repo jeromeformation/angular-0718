@@ -23,9 +23,11 @@ export class ProductListComponent implements OnInit {
     this.products = TAB_PRODUCT;
     this.notes = [];
     this.average = 0;
+    console.log('Appel du constructeur');
   }
 
   ngOnInit() {
+    console.log('Appel de ngOnInit');
   }
 
   /**
