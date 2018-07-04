@@ -19,10 +19,8 @@ export class ProductViewShowComponent implements OnInit, DoCheck {
 
     this.getProduct(idProduct);
   }
-
   ngOnInit() {
   }
-
   /**
    * On détecte le changement d'URL : si l'id de l'URL change => on change le produit à afficher
    */
