@@ -1,7 +1,7 @@
 <h2>Liste des produits</h2>
 
 <div class="row">
-    <p>La moyenne des votes est de : {{ average }}</p>
+    <p>La moyenne des votes est de : {{ average | number:'1.0-2' }}</p>
     <ul class="collection col s6">
         <li *ngFor="let currentProduct of products" class="collection-item" >
             <div>

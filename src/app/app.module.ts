@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { ProductShowComponent } from './products/product-show/product-show.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './root/home/home.component';
 
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 /* Fin de gestion de l'internationalisation */
@@ -22,10 +24,12 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     ProductListComponent,
     ProductUpdateComponent,
     ProductShowComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]

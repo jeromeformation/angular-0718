@@ -1,0 +1,9 @@
+p {
+    color: royalblue;
+}
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 50%;
+}

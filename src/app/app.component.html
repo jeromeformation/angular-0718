@@ -1,51 +1,29 @@
-<h1>Bienvenue dans {{ title }}</h1>
-<p>{{ presentation }}
-  <img src="/assets/img/hamac.jpg" alt="Un hamac">
-</p>
-<p>Pour en savoir plus : <a [href]="url">Écosia</a></p>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper teal">
+      <a routerLink="/" class="brand-logo">Accueil</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/produits">Liste des produits</a></li>
+        <li><a routerLink="/produits/modification">Formulaire de modification</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
 
-<p 
-  [attr.contenteditable]="isEditable"
-  [ngClass]="objClassesCSS"
-  [style.text-align]="isEditable ? 'left' : 'right'"
->Ce paragraphe est peut-être modifiable ? Cliquez pour savoir</p>
-
-<button (click)="changeIsEditable()" class="waves-effect waves-light btn">Changement du style</button>
-
-
-<!-- Mise en place d'un switch -->
-<p>Bilan météo : 
-<ng-container [ngSwitch]="meteo">
-  <ng-container *ngSwitchCase="'ensoleillé'">Il fait beau !</ng-container>
-  <ng-container *ngSwitchCase="'nuageux'">L'orage approche ! </ng-container>
-  <ng-container *ngSwitchCase="'pluvieux'">Ca mouille...</ng-container>
-  <ng-container *ngSwitchCase="'sec'">Il faut boire de l'eau</ng-container>
-  <ng-container *ngSwitchDefault>bilan indéterminé</ng-container>
-</ng-container>
-</p>
-
-<p>Ma variable météo : {{ meteo }}</p>
-
-<!-- Test des pipe avec la DecimalPipe -->
-
-<p>Nombre à virgule : {{ 66666.66666 | number:'1.0-3' }} </p>
-
-
-
-
-<!-- 
-  On affiche le formulaire seulement si ...
-  ... le booléan isEditable est à "true"
+<!--
+  La balise qui gère le routage
+  Elle insère/retire automatiquement les sélecteurs des components
 -->
-<div *ngIf="isEditable; else elseBlock">
-  <app-product-update></app-product-update>
-</div>
-<!-- 
-  Si le "*ngIf" n'est pas respecté, on affiche ce paragraphe
--->
-<ng-template #elseBlock>
-  <p>Le formulaire n'est pas disponible</p>
-</ng-template>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
 
-<!-- Liste des produits -->
-<app-product-list></app-product-list>
+
+<p>Paragraphe présent dans le fichier "index.html"</p>
